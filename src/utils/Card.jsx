@@ -30,7 +30,7 @@ const Card = ({repo}) => {
               <span>⭐ {repo.stars}</span>
               <span>{repo.language || "Unknown"}</span>
             </div>
-
+     
             <a
               href={`https://github.com/${repo.fullName}`}
               target="_blank"

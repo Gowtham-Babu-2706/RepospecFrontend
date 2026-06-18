@@ -15,3 +15,8 @@ export const createRepoData = async (data) => {
   const resp = await api.post("/save", data);
   return resp.data;
 };
+
+export const fetchGithubRepos = async () => {
+  const resp = await api.get("/github-repos");
+  return resp.data;
+};

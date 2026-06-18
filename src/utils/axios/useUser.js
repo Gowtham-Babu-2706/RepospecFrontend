@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { fetchAllData,searchRepos,createRepoData } from "./userApi";
+import { fetchAllData,searchRepos,createRepoData,fetchGithubRepos } from "./userApi";
 
 export const useUser = () => {
   const [data, setData] = useState([]);
@@ -82,5 +82,35 @@ export const useCreateRepo = () => {
     loading,
     error,
     success,
+  };
+};
+
+export const useGithubRepos = () => {
+  const [repos, setRepos] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const getRepos = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      const res = await fetchGithubRepos();
+      setRepos(res || []);
+    } catch (err) {
+      setError(
+        err.response?.data?.error || 
+        err.message || 
+        "Failed to fetch GitHub repositories."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return {
+    repos,
+    loading,
+    error,
+    fetchRepos: getRepos,
   };
 };
