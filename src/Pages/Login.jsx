@@ -203,11 +203,11 @@ const Login = () => {
   };
 
   const handleGoogle = () => {
-    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+    window.location.href = "https://repospecbackend-1.onrender.com/oauth2/authorization/google";
   };
 
   const handleGithub = () => {
-    window.location.href = "http://localhost:8080/oauth2/authorization/github";
+    window.location.href = "https://repospecbackend-1.onrender.com/oauth2/authorization/github";
   };
 
   const inputStyle = (field) => ({

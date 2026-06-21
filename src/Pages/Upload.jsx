@@ -83,7 +83,7 @@ const Upload = () => {
   };
 
   const handleLinkGithub = () => {
-    window.location.href = "http://localhost:8080/oauth2/authorization/github";
+    window.location.href = "https://repospecbackend-1.onrender.com/oauth2/authorization/github";
   };
 
   return (
